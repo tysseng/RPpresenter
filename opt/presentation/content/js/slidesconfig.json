@@ -1,0 +1,7 @@
+{ 
+  "interval": 10000,
+  "effect": "fade",
+  "speed": 100,
+  "scale": "scaletofit",
+  "background": "red"
+}

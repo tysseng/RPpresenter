@@ -1,0 +1,111 @@
+#countdown_dashboard {
+  height: 96px;
+  position: absolute;
+  left: 0px;
+  top: 0px;      
+  z-index: 100;
+}
+
+.threeDigit{
+    width: 278px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
+.twoDigit{
+	width: 191px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
+.dash {
+	height: 135px;
+	float: left;
+	position: relative;
+	color: #333;
+}
+
+/*
+.weeks_dash {
+	background: transparent url('../images/dark_weeks_dash.png') 0 0 no-repeat;
+}
+
+.days_dash {
+	background: transparent url('../images/dark_days_dash.png') 0 0 no-repeat;
+}
+
+.hours_dash {
+	background: transparent url('../images/dark_hours_dash.png') 0 0 no-repeat;
+}
+
+.minutes_dash {
+	background: transparent url('../images/dark_minutes_dash.png') 0 0 no-repeat;
+}
+
+.seconds_dash {
+	background: transparent url('../images/dark_seconds_dash.png') 0 0 no-repeat;
+} */
+
+.dash .digit {
+    box-shadow: inset 0 0 15px 0px #000;
+    background-color: #f0f0f0;
+    border-color: #333;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-style: solid;
+	font: bold 70pt Verdana;
+	font-weight: bold;
+	float: left;
+	width: 84px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+	text-align: center;
+	position: relative;
+}
+
+.left{
+  border-left-width: 4px;
+  border-right-width: 2px;
+}
+
+.middle{
+  border-left-width: 2px;
+  border-right-width: 2px;
+}
+
+.right{
+  border-left-width: 2px;
+  border-right-width: 4px;
+}
+
+.label{
+    float: left;
+    color: #c0c0c0;
+	font: normal 16pt Verdana;
+    height: 30px;
+}
+
+.counterLabel{
+    clear: both;
+    text-align: center;
+    color: #c0c0c0;
+	font: normal 16pt Verdana;
+    padding-top: 20px;
+}
+
+.counterLabelText{
+    width: 600px;
+    padding: 4px;
+}
+
+.counterLabelHidden{
+    padding: 0px;
+}
+
+.counterLabelText,
+.label,
+.dash{
+    background-color:#393939;
+}

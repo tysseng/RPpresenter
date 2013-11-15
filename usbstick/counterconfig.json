@@ -1,0 +1,12 @@
+{
+  "year" : 2014,
+  "month" : 10,
+  "day" : 20,
+  "hour" : 6,
+  "min" : 0,
+  "sec" : 0,
+
+  "counterLabel" : "Tid igjen til oppstart av DIPS",
+
+  "showSeconds" : true
+}

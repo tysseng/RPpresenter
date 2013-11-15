@@ -1,0 +1,5 @@
+{ 
+  "interval": 5000,
+  "effect": "fade",
+  "speed": 100 
+}

@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Presentation runner</title>
+  <script src="js/jquery-2.0.3.min.js"></script>
+  <script src="js/jquery.slides.min.js"></script>
+  <script src="js/jquery.lwtCountdown-1.0.js"></script>
+  <script src="js/messi.min.js"></script>
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/presentation.css">
+  <link rel="stylesheet" type="text/css" href="css/messi.min.css">
+  <link rel="stylesheet" type="text/css" href="css/lwtCountdown.css">
+</head>
+<body>
+  <div id="slidewrapper"></div>
+
+  <!-- Countdown dashboard start -->
+  <div id="countdown_dashboard">
+    <div class="dash days_dash threeDigit">
+      <div class="digit left">0</div>
+      <div class="digit middle">0</div>
+      <div class="digit right">0</div>
+    </div>
+    <div class="dash hours_dash twoDigit">
+      <div class="digit left">0</div>
+      <div class="digit right">0</div>
+    </div>
+    <div class="dash minutes_dash twoDigit">
+      <div class="digit left">0</div>
+      <div class="digit right">0</div>
+    </div>
+    <div id="secondsPlaceholder" class="dash seconds_dash twoDigit">
+      <div class="digit left">0</div>
+      <div class="digit right">0</div>
+    </div>
+    <div class="labels">
+        <div class="label threeDigit">Dager</div>
+        <div class="label twoDigit">Timer</div>
+        <div class="label twoDigit">Minutter</div>
+        <div class="label twoDigit" id="secondsLabel">Sekunder</div>
+    </div>
+    <div class="counterLabel">
+        <center><div class="counterLabelText" id="counterLabel"></div></center>
+    </div>
+  </div>
+
+  <script>
+  $(document).ready(function() {
+    startPresentation();
+  });
+  </script>
+</body>
+</html>

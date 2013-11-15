@@ -1,0 +1,8 @@
+run as root:
+crontab -e
+
+Add
+
+# Reboot every night at four am
+0 4 * * * /opt/presentation/scripts/reboot.sh
+*/1 * * * * /opt/presentation/scripts/healthcheck.sh
