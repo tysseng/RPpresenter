@@ -9,6 +9,7 @@ function Slides(options){
   var imageDir = options.imageDir;
   var offsetElement = options.offsetElement;
 
+  var slideConfig;
   var currentIndex;
   var carouselImages;
   var carouselDelay;

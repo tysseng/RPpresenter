@@ -9,41 +9,42 @@ is updated)
 - The counter checks the time every second even when seconds are not displayed
 
 */
-
-
-var counterDivId = "#countdown_dashboard";
-var slideConfig;
-
 function reloadPage(){
-    window.location.reload(true);
+  window.location.reload(true);
 }
 
 function startPresentation(){
-    $.ajaxSetup({cache: false});
+  $.ajaxSetup({cache: false});
 
-    // reload page every six hours to free up memory
-    setTimeout(reloadPage, 3 * 60 * 60 * 1000);
+  // reload page every six hours to free up memory
+  setTimeout(reloadPage, 3 * 60 * 60 * 1000);
 
-    var slides = new Slides({
-      configUrl: '/js/slidesconfig.json',
-      fileListUrl: '/js/slidefiles.json',
-      slideWrapperDiv: $("#slidewrapper"),
-      imageDir: '/slides',
-      offsetElement: $(".counterLabel")
-    });
+  var slides = new Slides({
+    configUrl: '/js/slidesconfig.json',
+    fileListUrl: '/js/slidefiles.json',
+    slideWrapperDiv: $("#slidewrapper"),
+    imageDir: '/slides',
+    offsetElement: $(".counterLabel")
+  });
 
-    var statusHandler = new Status({
-      success: function(){
-        slides.start();
-        loadCounterConfig();
-      }
-    });
+  var counter = new Counter({
+    configUrl: '/js/counterconfig.json',
+    counterDiv: $("#countdown_dashboard")
+  });
 
-    // check status every second
-    setInterval(statusHandler.fetchStatus, 1000);
-    slides.start();
-    startCounter();
-    loadCounterConfig();
+  // hander that reloads configs and restarts slides and counter
+  var statusHandler = new Status({
+    success: function(){
+      slides.start();
+      counter.start();
+    }
+  });
+
+  // check status every second
+  setInterval(statusHandler.fetchStatus, 1000);
+  slides.start();
+  counter.init();
+  counter.start();
 }
 
 
