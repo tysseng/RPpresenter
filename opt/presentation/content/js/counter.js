@@ -86,3 +86,19 @@ function positionCounter(){
   counter.css("top", top + "px");
 
 }
+
+
+  /**
+   * Get config value, returns defaultValue if parameter is not found
+   *
+   * @param config Config array
+   * @param paramName Parameter to get
+   * @param defaultValue Default parameter value
+   */
+  function getValue(config, paramName, defaultValue){
+    if(config && typeof config[paramName] != 'undefined'){
+      return config[paramName];
+    } else {
+      return defaultValue;
+    }
+  }

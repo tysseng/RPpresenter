@@ -7,15 +7,12 @@ function Status(options) {
   var status = "STARTING";
   var success = options.success;
 
-  var that = this;
-
   // Public method
   this.fetchStatus = function() {
     $.getJSON('/js/status.json', function(data) {
       updateStatus(data.status, success);
     });
   };
-
 
   // Private methods
   function updateStatus(newStatus, success){

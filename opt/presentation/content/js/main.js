@@ -24,19 +24,24 @@ function startPresentation(){
     // reload page every six hours to free up memory
     setTimeout(reloadPage, 3 * 60 * 60 * 1000);
 
-    var reloadPresenter = function (){
-      console.log("Reloading presenter")
-      loadSlidesConfig();
-      loadCounterConfig();
-    };
+    var slides = new Slides({
+      configUrl: '/js/slidesconfig.json',
+      fileListUrl: '/js/slidefiles.json',
+      slideWrapperDiv: $("#slidewrapper"),
+      imageDir: '/slides',
+      offsetElement: $(".counterLabel")
+    });
 
     var statusHandler = new Status({
-      success: reloadPresenter
+      success: function(){
+        slides.start();
+        loadCounterConfig();
+      }
     });
 
     // check status every second
     setInterval(statusHandler.fetchStatus, 1000);
-    loadSlidesConfig();
+    slides.start();
     startCounter();
     loadCounterConfig();
 }
